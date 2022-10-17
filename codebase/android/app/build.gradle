@@ -1,0 +1,88 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+}
+
+android {
+    namespace "com.makeappssimple.abhimanyu.composecatalog.android"
+    compileSdk rootProject.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.makeappssimple.abhimanyu.composecatalog.android"
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
+        versionCode rootProject.appVersionCode
+        versionName rootProject.appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion jetpackComposeCompilerVersion
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+dependencies {
+    // AndroidX core
+    implementation "androidx.core:core-ktx:$rootProject.androidXCoreVersion"
+
+    // Lifecycle runtime
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycleRuntimeVersion"
+
+    // Jetpack compose integration with activities
+    implementation "androidx.activity:activity-compose:$rootProject.jetpackComposeActivityIntegrationVersion"
+
+    // Jetpack compose
+    implementation "androidx.compose.ui:ui:$rootProject.jetpackComposeVersion"
+
+    // Jetpack compose tooling support (Previews, etc.)
+    debugImplementation "androidx.compose.ui:ui-tooling:$rootProject.jetpackComposeVersion"
+    implementation "androidx.compose.ui:ui-tooling-preview:$rootProject.jetpackComposeVersion"
+
+    // Jetpack compose material design
+    implementation "androidx.compose.material:material:$rootProject.jetpackComposeVersion"
+
+
+    // Testing
+
+    // Junit
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidXJUnitExtensionVersion"
+
+    // Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+
+    // Jetpack compose UI tests
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$rootProject.jetpackComposeVersion"
+
+    // Jetpack compose UI tests manifest - Needed for createComposeRule, but not createAndroidComposeRule
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$rootProject.jetpackComposeVersion"
+}
