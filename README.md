@@ -13,3 +13,9 @@ I will try to add examples for the following composables.
 - Material components - https://lnkd.in/gAfMfjZB
 - Material 3 components - https://lnkd.in/gvCBAyfx
 - Animation - https://lnkd.in/gtC9qCE7
+
+### Credits
+
+<img src="/assets/catalog/catalog.png" width="100" />
+
+<a href="https://www.flaticon.com/free-icons/catalogue" title="catalogue icons">Catalogue icons created by Freepik - Flaticon</a>
